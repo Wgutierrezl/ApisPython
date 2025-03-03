@@ -6,7 +6,7 @@ class User(SQLModel,table=True):
     id_usuario:str=Field(default=None,primary_key=True)
     nombre:str=Field(default=None,unique=True)
     correo:str=Field(default=None,unique=True)
-    contraseña:str=Field(default=None)
+    contrasena:str=Field(default=None)
     tipo:str
     fecha_registro:date
     
