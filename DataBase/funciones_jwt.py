@@ -36,7 +36,7 @@ def AuthenticaraUser(sesion:Session,email:str,password:str):
     statement=GetUser(sesion,email)
     if not statement:
         return None
-    if not verify_password(password,statement.contraseña):
+    if not verify_password(password,statement.contrasena):
         return False
     return statement
 
@@ -97,7 +97,7 @@ async def read_own_items(current_user:Annotated[User,Depends(get_currentt_user_a
     return {"UserID":current_user.id_usuario,
             "UserName":current_user.nombre,
             "Email":current_user.correo,
-            "Contraseña":current_user.contraseña,
+            "Contraseña":current_user.contrasena,
             "Tipo":current_user.tipo,
             "FechaRegistro":current_user.fecha_registro}
     
